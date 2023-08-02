@@ -71,31 +71,16 @@ def gen(tmp_path_factory):
     return gen_project
 
 
-DEMO_PROJ_SLUG = "fair_python_cookiecutter_demo"
-
-
 def test_cookiecutter(gen):
+    DEMO_PROJ_SLUG = "metador_my_extension_name"
+
     # generate with default values
     dir = gen()
     sanity_check_project(dir)
-    # should NOT have the code files
+    # should NOT have the demo code files
     assert not (dir / f"src/{DEMO_PROJ_SLUG}api.py").is_file()
     assert not (dir / f"src/{DEMO_PROJ_SLUG}/cli.py").is_file()
     assert not (dir / "tests/test_api.py").is_file()
     assert not (dir / "tests/test_cli.py").is_file()
-    # and the expected license (MIT)
-    first_license_line = open(dir / "LICENSE", "r").readline()
-    assert first_license_line.find("MIT") >= 0
-
-    # ----
-    # generate with all demo code and different license
-    dir = gen(config_file="./tests/demo.yaml")
-    sanity_check_project(dir)
-    # should have the code files
-    assert (dir / f"src/{DEMO_PROJ_SLUG}/api.py").is_file()
-    assert (dir / f"src/{DEMO_PROJ_SLUG}/cli.py").is_file()
-    assert (dir / "tests/test_api.py").is_file()
-    assert (dir / "tests/test_cli.py").is_file()
-    # and the expected license (Unlicense)
-    first_license_line = open(dir / "LICENSE", "r").readline()
-    assert first_license_line.find("public domain") > 0
+    # should have schema
+    assert (dir / f"src/{DEMO_PROJ_SLUG}/schemas.py").is_file()

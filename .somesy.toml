@@ -1,10 +1,11 @@
 [project]
-name = "fair-python-cookiecutter"
+name = "metador-extension-cookiecutter"
 version = "0.1.0"
-description = "An opinionated cookiecutter template to kickstart a modern best-practice Python project with FAIR metadata. "
+description = "Cookiecutter template to create Python packages providing Metador plugins."
 
 license = "MIT"
 keywords = [
+    "metador",
     "fair",
     "metadata",
     "python",
@@ -12,9 +13,9 @@ keywords = [
     "template",
 ]
 
-repository = "https://github.com/Materials-Data-Science-and-Informatics/fair-python-cookiecutter"
-homepage = "https://materials-data-science-and-informatics.github.io/fair-python-cookiecutter"
-documentation = "https://materials-data-science-and-informatics.github.io/fair-python-cookiecutter"
+repository = "https://github.com/Materials-Data-Science-and-Informatics/metador-extension-cookiecutter"
+homepage = "https://materials-data-science-and-informatics.github.io/metador-extension-cookiecutter"
+documentation = "https://materials-data-science-and-informatics.github.io/metador-extension-cookiecutter"
 
 [[project.people]]
 given-names = "Anton"
@@ -26,4 +27,4 @@ author = true
 maintainer = true
 
 [config]
-verbose = true
+verbose = false

@@ -75,13 +75,9 @@ include = [
 
 [tool.poetry.dependencies]
 python = "^3.8"
-{%- if "cli" in cookiecutter.init_skel.lower() %}
-typer = "^0.7.0"
-{%- endif %}
-{%- if "api" in cookiecutter.init_skel.lower() %}
-fastapi = "^0.95.0"
-uvicorn = "^0.21.1"
-{%- endif %}
+# metador-core = "^0.1.0"
+metador-core = { git = "https://github.com/Materials-Data-Science-and-Informatics/metador-core.git" }
+pydantic = "^1.10.8"
 
 [tool.poetry.group.dev.dependencies]
 poethepoet = "^0.18.1"
@@ -90,9 +86,6 @@ pytest = "^7.2.2"
 pytest-cov = "^4.0.0"
 hypothesis = "^6.68.2"
 licensecheck = "^2023.1.1"
-{%- if "api" in cookiecutter.init_skel.lower() %}
-httpx = "^0.23.3"
-{%- endif %}
 
 [tool.poetry.group.docs]
 optional = true
@@ -113,12 +106,21 @@ mike = "^1.1.2"
 anybadge = "^1.14.0"
 black = "^23.3.0"
 
-[tool.poetry.scripts]
-# put your script entrypoints here
-# some-script = 'module.submodule:some_object'
-{%- if "cli" in cookiecutter.init_skel.lower() %}
-{{ cookiecutter.__project_slug }}-cli = '{{ cookiecutter.__project_package }}.cli:app'
-{%- endif %}
+# Metador plugin entrypoints
+# ----
+
+[tool.poetry.plugins.metador_schema]
+'acme.custom-schema__0.1.0' = "{{ cookiecutter.__project_package }}.schemas:MyCustomSchema"
+
+# NOTE: you can add other kinds of plugins under respective sections, e.g.:
+#
+# [tool.poetry.plugins.metador_harvester]
+# ...
+#
+# [tool.poetry.plugins.metador_widget]
+# ...
+
+# ----
 
 [build-system]
 requires = ["poetry-core"]
@@ -165,7 +167,13 @@ ignore = ["W503"]
 max-line-length = 88
 
 [tool.pydocstyle]
-convention = "google"
+ignore = [
+  # custom:
+  "D106",
+  # google "convention" ignore list:
+  "D203"," D204"," D213"," D215",
+  "D400", "D401", "D404", "D406", "D407", "D408", "D409", "D413",
+]
 
 [tool.bandit]
 exclude_dirs = ["tests", "scripts"]

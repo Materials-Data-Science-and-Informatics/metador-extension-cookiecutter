@@ -136,23 +136,24 @@ jobs:
         poetry run mike deploy -u --push ${{ github.ref_name }} $SET_LATEST
 
 # ----
+# NOTE: we won't do releases of that template, only update and merge from upstream.
 
-  deploy_demo:
-    needs: docs
-    if: startswith(github.ref, 'refs/tags/v')
-    secrets: inherit
-    uses: "./.github/workflows/deploy_demo.yml"
+  # deploy_demo:
+  #   needs: docs
+  #   if: startswith(github.ref, 'refs/tags/v')
+  #   secrets: inherit
+  #   uses: "./.github/workflows/deploy_demo.yml"
 
-  publish_template:
-    # if a version tag is pushed + tests + docs completed -> do release
-    needs: deploy_demo
-    if: startswith(github.ref, 'refs/tags/v')
-    permissions:
-      contents: write  # for GitHub release
-      id-token: write  # for PyPI release
+  # publish_template:
+  #   # if a version tag is pushed + tests + docs completed -> do release
+  #   needs: deploy_demo
+  #   if: startswith(github.ref, 'refs/tags/v')
+  #   permissions:
+  #     contents: write  # for GitHub release
+  #     id-token: write  # for PyPI release
 
-    uses: "./.github/workflows/release.yml"
-    with:
-      to_github: true
-      to_test_pypi: false
-      to_pypi: false
+  #   uses: "./.github/workflows/release.yml"
+  #   with:
+  #     to_github: true
+  #     to_test_pypi: false
+  #     to_pypi: false

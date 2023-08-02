@@ -13,15 +13,11 @@ for file in .github/ISSUE_TEMPLATE/*; do
 done
 
 # ----
-# remove unneeded demo code
-# {% if "cli" not in cookiecutter.init_skel.lower() %}
+# remove unneeded demo code (will only keep metador extension example code)
 rm src/{{ cookiecutter.__project_package }}/cli.py
 rm tests/test_cli.py
-# {% endif %}
-# {% if "api" not in cookiecutter.init_skel.lower() %}
 rm src/{{ cookiecutter.__project_package }}/api.py
 rm tests/test_api.py
-# {% endif %}
 # ----
 
 
@@ -47,8 +43,8 @@ poetry run poe lint somesy --files pyproject.toml
 # create first commit
 git add .
 poetry run git commit \
-    -m "generated project using fair-python-cookiecutter" \
-    -m "https://github.com/Materials-Data-Science-and-Informatics/fair-python-cookiecutter"
+    -m "generated project using metador-extension-cookiecutter" \
+    -m "https://github.com/Materials-Data-Science-and-Informatics/metador-extension-cookiecutter"
 
 # make sure that the default branch is called 'main'
 git branch -M main

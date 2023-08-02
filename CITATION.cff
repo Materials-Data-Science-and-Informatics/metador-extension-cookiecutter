@@ -2,13 +2,13 @@ cff-version: 1.2.0
 type: software
 message: If you use this software, please cite it using this metadata.
 
-title: "fair-python-cookiecutter"
+title: "metador-extension-cookiecutter"
 version: "0.1.0"
-abstract: "An opinionated cookiecutter template to kickstart a modern best-practice
-  Python project with FAIR metadata."
-repository-code: "https://github.com/Materials-Data-Science-and-Informatics/fair-python-cookiecutter"
+abstract: "Cookiecutter template to create Python packages providing Metador plugins."
+repository-code: "https://github.com/Materials-Data-Science-and-Informatics/metador-extension-cookiecutter"
 license: "MIT"
 keywords:
+- metador
 - fair
 - metadata
 - python
@@ -27,4 +27,4 @@ contact:
   family-names: Pirogov
   email: a.pirogov@fz-juelich.de
 url: 
-  https://materials-data-science-and-informatics.github.io/fair-python-cookiecutter
+  https://materials-data-science-and-informatics.github.io/metador-extension-cookiecutter

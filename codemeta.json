@@ -29,18 +29,19 @@
             "givenName": "Anton"
         }
     ],
-    "codeRepository": "https://github.com/Materials-Data-Science-and-Informatics/fair-python-cookiecutter",
-    "description": "An opinionated cookiecutter template to kickstart a modern best-practice Python project with FAIR metadata.",
-    "identifier": "fair-python-cookiecutter",
+    "codeRepository": "https://github.com/Materials-Data-Science-and-Informatics/metador-extension-cookiecutter",
+    "description": "Cookiecutter template to create Python packages providing Metador plugins.",
+    "identifier": "metador-extension-cookiecutter",
     "keywords": [
         "cookiecutter",
         "fair",
         "metadata",
+        "metador",
         "python",
         "template"
     ],
     "license": "http://spdx.org/licenses/MIT",
-    "name": "fair-python-cookiecutter",
+    "name": "metador-extension-cookiecutter",
     "runtimePlatform": "Python 3",
     "softwareRequirements": [
         {
@@ -58,6 +59,6 @@
             "version": "^3.8"
         }
     ],
-    "url": "https://materials-data-science-and-informatics.github.io/fair-python-cookiecutter",
+    "url": "https://materials-data-science-and-informatics.github.io/metador-extension-cookiecutter",
     "version": "0.1.0"
 }

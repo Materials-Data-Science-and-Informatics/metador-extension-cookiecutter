@@ -25,4 +25,4 @@ please inspect the git history of this repository.
 Summary of contribution
 -->
 
-... maybe **[you](https://materials-data-science-and-informatics.github.io/fair-python-cookiecutter/main/contributing)**?
+... maybe **[you](https://materials-data-science-and-informatics.github.io/metador-extension-cookiecutter/main/contributing)**?
