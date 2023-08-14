@@ -75,8 +75,7 @@ include = [
 
 [tool.poetry.dependencies]
 python = "^3.8"
-# metador-core = "^0.1.0"
-metador-core = { git = "https://github.com/Materials-Data-Science-and-Informatics/metador-core.git" }
+metador-core = "^0.1.0"
 pydantic = "^1.10.8"
 
 [tool.poetry.group.dev.dependencies]
